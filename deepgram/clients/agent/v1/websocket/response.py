@@ -69,16 +69,26 @@ class AgentThinkingResponse(BaseResponse):
 
 
 @dataclass
+class Function(BaseResponse):
+    """
+    The Function and arguments to execute from server or client side.
+    """
+
+    id: str
+    name: str
+    arguments: str
+    client_side: bool
+
+
+@dataclass
 class FunctionCallRequest(BaseResponse):
     """
     The FunctionCallRequest message is used to call a function from the server to the client.
     """
 
     type: str
-    function_name: str
-    function_call_id: str
-    input: str
-
+    functions: List[Function]
+    
 
 @dataclass
 class AgentStartedSpeakingResponse(BaseResponse):
