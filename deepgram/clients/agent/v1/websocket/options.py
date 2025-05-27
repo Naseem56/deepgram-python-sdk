@@ -75,7 +75,7 @@ class Endpoint(BaseResponse):
     Define a custom endpoint for the agent.
     """
 
-    method: Optional[str] = field(default="POST")
+    # method: Optional[str] = field(default="POST")
     url: str = field(default="")
     headers: Optional[List[Header]] = field(
         default=None, metadata=dataclass_config(exclude=lambda f: f is None)
