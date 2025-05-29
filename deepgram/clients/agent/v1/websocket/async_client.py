@@ -100,7 +100,7 @@ class AsyncAgentWebSocketClient(
         self._endpoint = "v1/agent/converse"
 
         # override the endpoint since it needs to be "wss://agent.deepgram.com/agent"
-        self._config.url = "agent.deepgram.com" if not self._config.url else self._config.url
+        self._config.url = "agent.deepgram.com"
         self._keep_alive_thread = None
 
         # init handlers
